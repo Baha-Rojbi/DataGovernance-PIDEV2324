@@ -4,22 +4,23 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import tn.esprit.gouvernance_donnees_backend.entities.Utilisateur;
 import tn.esprit.gouvernance_donnees_backend.entities.requestEntities.LoginRequest;
 import tn.esprit.gouvernance_donnees_backend.entities.responseEntities.AuthenticationResponse;
+import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.IAuthImp;
 import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.IUtilisateurImp;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-
-
+@CrossOrigin(origins = "http://localhost:4200")
 @AllArgsConstructor
-@RequestMapping("/gouvernanceDonnées/auth")
+@RequestMapping("/gouvernanceDonnees/auth")
 @RestController
-
-
+@Slf4j
 public class AuthController {
 
-    private IUtilisateurImp iAuthImp;
+    private final IAuthImp iAuthImp;
+    
+
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> registerUtilsateur(@RequestBody Utilisateur user) {
@@ -30,5 +31,7 @@ public class AuthController {
     public ResponseEntity<AuthenticationResponse> loginUtilisateur(@RequestBody LoginRequest user) {
         return ResponseEntity.ok(iAuthImp.loginUtilisateur(user));
     }
+
+    
     
 }

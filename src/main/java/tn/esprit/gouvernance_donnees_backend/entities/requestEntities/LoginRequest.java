@@ -10,5 +10,5 @@ import lombok.*;
 @ToString
 public class LoginRequest  {
     private String email;
-    String motDePasse;
+    String password;
 } 

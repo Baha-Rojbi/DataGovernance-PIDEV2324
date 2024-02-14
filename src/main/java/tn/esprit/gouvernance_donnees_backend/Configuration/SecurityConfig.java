@@ -8,6 +8,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import lombok.RequiredArgsConstructor;
 
@@ -26,7 +29,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf // prevention contre l'attack Cross-Site Request Forgery (CSRF) 
                         .disable())
                 .authorizeHttpRequests(requests -> requests // accepter les requetes http 
-                        .requestMatchers("/gouvernanceDonnées/auth/**")// pour definir le white list 
+                        .requestMatchers("/gouvernanceDonnees/auth/**")// pour definir le white list 
                         .permitAll()
                         .anyRequest()
                         .authenticated())
@@ -36,5 +39,20 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);// application du filtre avant l'accées
         
         return http.build();
+    }
+     @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowCredentials(true);
+        config.addAllowedOrigin("*");
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("OPTIONS");
+        config.addAllowedMethod("GET");
+        config.addAllowedMethod("POST");
+        config.addAllowedMethod("PUT");
+        config.addAllowedMethod("DELETE");
+        source.registerCorsConfiguration("/**", config);
+        return source;
     }
 }
