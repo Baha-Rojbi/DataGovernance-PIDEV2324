@@ -7,14 +7,16 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import tn.esprit.gouvernance_donnees_backend.entities.TraceLog;
 import tn.esprit.gouvernance_donnees_backend.entities.Utilisateur;
+import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.tracelog.Itracelog;
 import tn.esprit.gouvernance_donnees_backend.repositories.TraceLogRepository;
 import tn.esprit.gouvernance_donnees_backend.repositories.UtilisateurRepository;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 @Service
-public class TraceLogService {
+public class TraceLogService implements Itracelog {
 
     @Autowired
     private TraceLogRepository traceLogRepository;
@@ -44,4 +46,11 @@ public class TraceLogService {
 
         traceLogRepository.save(traceLog);
     }
-}}
+}
+
+    @Override
+    public List<TraceLog> getAllLogs() {
+                 return traceLogRepository.findAll();
+
+    }
+}

@@ -1,5 +1,6 @@
 package tn.esprit.gouvernance_donnees_backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,7 +28,7 @@ public class TraceLog {
     private String description;
 
     private LocalDateTime timestamp;
-
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "utilisateur_id")
     private Utilisateur utilisateur;
