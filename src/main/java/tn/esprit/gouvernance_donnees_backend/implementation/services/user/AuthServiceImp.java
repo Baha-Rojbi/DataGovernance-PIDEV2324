@@ -64,7 +64,9 @@ public class AuthServiceImp implements IAuthImp {
 
         } catch (Exception e) {
             log.info("Authentication failed for user: {}", loginRequest.getEmail());
+            log.info(e.getMessage());
             throw new BadCredentialsException("Invalid email or password");
+
 
         }
         var user = utilisateurRepository.findByEmail(loginRequest.getEmail());

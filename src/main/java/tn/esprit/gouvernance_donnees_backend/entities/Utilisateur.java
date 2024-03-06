@@ -1,13 +1,6 @@
 package tn.esprit.gouvernance_donnees_backend.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.Collection;
@@ -57,6 +50,9 @@ public class Utilisateur implements  UserDetails {
 
     @OneToOne
     private Adresse adresse;
+
+    @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
+    private List<TraceLog> traceLogs;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
