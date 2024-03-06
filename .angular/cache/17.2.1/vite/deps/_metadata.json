@@ -1,0 +1,127 @@
+{
+  "hash": "0a68d1fd",
+  "configHash": "b9f6c815",
+  "lockfileHash": "59b7ee38",
+  "browserHash": "c4ff7e12",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "0cf2dc41",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "9a553c1b",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "b3d5c4b0",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "2ece7abb",
+      "needsInterop": false
+    },
+    "@angular/material/chips": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/chips.mjs",
+      "file": "@angular_material_chips.js",
+      "fileHash": "2a799cc4",
+      "needsInterop": false
+    },
+    "@angular/material/dialog": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/dialog.mjs",
+      "file": "@angular_material_dialog.js",
+      "fileHash": "3abc9b64",
+      "needsInterop": false
+    },
+    "@angular/material/form-field": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/form-field.mjs",
+      "file": "@angular_material_form-field.js",
+      "fileHash": "91c3a284",
+      "needsInterop": false
+    },
+    "@angular/material/icon": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/icon.mjs",
+      "file": "@angular_material_icon.js",
+      "fileHash": "312285ab",
+      "needsInterop": false
+    },
+    "@angular/material/input": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/input.mjs",
+      "file": "@angular_material_input.js",
+      "fileHash": "d6753604",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "10800c42",
+      "needsInterop": false
+    },
+    "@angular/platform-browser/animations": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/animations.mjs",
+      "file": "@angular_platform-browser_animations.js",
+      "fileHash": "263f3d09",
+      "needsInterop": false
+    },
+    "@angular/platform-browser/animations/async": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/animations/async.mjs",
+      "file": "@angular_platform-browser_animations_async.js",
+      "fileHash": "60de8d8e",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "7bd95f37",
+      "needsInterop": false
+    },
+    "rxjs": {
+      "src": "../../../../../node_modules/rxjs/dist/esm5/index.js",
+      "file": "rxjs.js",
+      "fileHash": "d587289c",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "browser-ZBEU2RJM": {
+      "file": "browser-ZBEU2RJM.js"
+    },
+    "chunk-BP66ZH7Q": {
+      "file": "chunk-BP66ZH7Q.js"
+    },
+    "chunk-7IBQPP7A": {
+      "file": "chunk-7IBQPP7A.js"
+    },
+    "chunk-5BPZ6RLP": {
+      "file": "chunk-5BPZ6RLP.js"
+    },
+    "chunk-6ADG6UZG": {
+      "file": "chunk-6ADG6UZG.js"
+    },
+    "chunk-ZFQRDC55": {
+      "file": "chunk-ZFQRDC55.js"
+    },
+    "chunk-LSOYFJ6M": {
+      "file": "chunk-LSOYFJ6M.js"
+    },
+    "chunk-AGMJLHW4": {
+      "file": "chunk-AGMJLHW4.js"
+    },
+    "chunk-XGDTR5M7": {
+      "file": "chunk-XGDTR5M7.js"
+    },
+    "chunk-FKAFVGKM": {
+      "file": "chunk-FKAFVGKM.js"
+    },
+    "chunk-VATF2DOZ": {
+      "file": "chunk-VATF2DOZ.js"
+    }
+  }
+}
