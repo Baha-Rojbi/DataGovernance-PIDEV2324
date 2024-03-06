@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @AllArgsConstructor
-@RequestMapping("/utilisateurcontroller")
+@RequestMapping("/AdminController")
 @RestController
-public class UtilisateurController {
+public class AdminController {
     
     private final IUtilisateurImp iUtilisateurImp ;
     
