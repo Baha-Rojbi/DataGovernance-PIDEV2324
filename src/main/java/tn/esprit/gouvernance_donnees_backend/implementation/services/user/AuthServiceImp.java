@@ -1,4 +1,4 @@
-package tn.esprit.gouvernance_donnees_backend.implementation.services;
+package tn.esprit.gouvernance_donnees_backend.implementation.services.user;
 
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -15,7 +15,7 @@ import tn.esprit.gouvernance_donnees_backend.entities.UserStatus;
 import tn.esprit.gouvernance_donnees_backend.entities.Utilisateur;
 import tn.esprit.gouvernance_donnees_backend.entities.requestEntities.LoginRequest;
 import tn.esprit.gouvernance_donnees_backend.entities.responseEntities.AuthenticationResponse;
-import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.IAuthImp;
+import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.user.IAuthImp;
 import tn.esprit.gouvernance_donnees_backend.repositories.AdresseRepository;
 import tn.esprit.gouvernance_donnees_backend.repositories.UtilisateurRepository;
 

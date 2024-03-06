@@ -1,4 +1,4 @@
-package tn.esprit.gouvernance_donnees_backend.controllers;
+package tn.esprit.gouvernance_donnees_backend.controllers.user;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import lombok.AllArgsConstructor;
 
 import tn.esprit.gouvernance_donnees_backend.entities.Utilisateur;
 import tn.esprit.gouvernance_donnees_backend.entities.requestEntities.afffectRoleStatusRequest;
-import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.IUtilisateurImp;
+import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.user.IUtilisateurImp;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;

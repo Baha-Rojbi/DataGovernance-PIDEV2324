@@ -1,4 +1,4 @@
-package tn.esprit.gouvernance_donnees_backend.implementation.interfaces;
+package tn.esprit.gouvernance_donnees_backend.implementation.interfaces.user;
 
 import java.util.List;
 

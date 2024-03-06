@@ -1,9 +1,10 @@
-package com.example.metadataimportation.Services;
+package tn.esprit.gouvernance_donnees_backend.implementation.services.exportation;
 
-import com.example.metadataimportation.Entities.DataTable;
-import com.example.metadataimportation.Entities.Schema;
-import com.example.metadataimportation.Repositories.SchemaRepository;
-import com.example.metadataimportation.Repositories.TableRepository;
+import tn.esprit.gouvernance_donnees_backend.entities.DataTable;
+import tn.esprit.gouvernance_donnees_backend.entities.Schema;
+import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.exportation.IDataService;
+import tn.esprit.gouvernance_donnees_backend.repositories.SchemaRepository;
+import tn.esprit.gouvernance_donnees_backend.repositories.TableRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Service
-public class DataService {
+public class DataService implements IDataService {
     @Autowired
     private final TableRepository tableRepository;
     @Autowired

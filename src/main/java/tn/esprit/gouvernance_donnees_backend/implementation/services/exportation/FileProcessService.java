@@ -1,9 +1,10 @@
-package com.example.metadataimportation.Services;
+package tn.esprit.gouvernance_donnees_backend.implementation.services.exportation;
 
-import com.example.metadataimportation.Entities.DataTable;
-import com.example.metadataimportation.Entities.Schema;
-import com.example.metadataimportation.Repositories.SchemaRepository;
-import com.example.metadataimportation.Repositories.TableRepository;
+import tn.esprit.gouvernance_donnees_backend.entities.DataTable;
+import tn.esprit.gouvernance_donnees_backend.entities.Schema;
+import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.exportation.IFileProcessService;
+import tn.esprit.gouvernance_donnees_backend.repositories.SchemaRepository;
+import tn.esprit.gouvernance_donnees_backend.repositories.TableRepository;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import jakarta.transaction.Transactional;
@@ -25,12 +26,13 @@ import java.util.Map;
 import java.util.Optional;
 
 @Service
-public class FileProcessService {
+public class FileProcessService implements IFileProcessService {
     @Autowired
     private TableRepository tableRepository;
 
     @Autowired
     private SchemaRepository schemaRepository;
+    @Override
     @Transactional
     public String processFile(MultipartFile file, String description) throws Exception {
         String fileName = file.getOriginalFilename();

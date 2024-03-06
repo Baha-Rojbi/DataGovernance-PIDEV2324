@@ -1,4 +1,4 @@
-package tn.esprit.gouvernance_donnees_backend.implementation.services;
+package tn.esprit.gouvernance_donnees_backend.implementation.services.user;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import tn.esprit.gouvernance_donnees_backend.entities.Role;
 import tn.esprit.gouvernance_donnees_backend.entities.UserStatus;
 import tn.esprit.gouvernance_donnees_backend.entities.Utilisateur;
-import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.IUtilisateurImp;
+import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.user.IUtilisateurImp;
 import tn.esprit.gouvernance_donnees_backend.repositories.UtilisateurRepository;
 
 @AllArgsConstructor

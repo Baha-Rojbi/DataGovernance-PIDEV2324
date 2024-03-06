@@ -1,4 +1,4 @@
-package com.example.metadataimportation.Entities;
+package tn.esprit.gouvernance_donnees_backend.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

@@ -1,9 +1,11 @@
-package com.example.metadataimportation.Controllers;
+package tn.esprit.gouvernance_donnees_backend.controllers.extraction;
 
-import com.example.metadataimportation.Entities.DataTable;
-import com.example.metadataimportation.Entities.Schema;
-import com.example.metadataimportation.Services.DataService;
-import com.example.metadataimportation.Services.FileProcessService;
+import tn.esprit.gouvernance_donnees_backend.entities.DataTable;
+import tn.esprit.gouvernance_donnees_backend.entities.Schema;
+import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.exportation.IDataService;
+import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.exportation.IFileProcessService;
+import tn.esprit.gouvernance_donnees_backend.implementation.services.exportation.DataService;
+import tn.esprit.gouvernance_donnees_backend.implementation.services.exportation.FileProcessService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,9 +21,9 @@ import java.util.Set;
 @RequestMapping("/api")
 public class MetaDataContoller {
     @Autowired
-    private FileProcessService fileProcessService;
+    private IFileProcessService fileProcessService;
     @Autowired
-    private DataService dataTableService;
+    private IDataService dataTableService;
     @Autowired
     public MetaDataContoller(DataService dataTableService) {
         this.dataTableService = dataTableService;

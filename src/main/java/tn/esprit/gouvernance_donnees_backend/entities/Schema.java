@@ -1,10 +1,11 @@
-package com.example.metadataimportation.Entities;
+package tn.esprit.gouvernance_donnees_backend.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import tn.esprit.gouvernance_donnees_backend.entities.DataTable;
 
 import java.io.Serializable;
 import java.util.HashSet;

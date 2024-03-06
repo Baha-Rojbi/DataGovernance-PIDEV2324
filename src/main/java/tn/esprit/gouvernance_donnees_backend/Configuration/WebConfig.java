@@ -1,4 +1,4 @@
-package com.example.metadataimportation.Configuration;
+package tn.esprit.gouvernance_donnees_backend.Configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

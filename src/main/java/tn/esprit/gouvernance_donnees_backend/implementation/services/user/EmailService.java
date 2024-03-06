@@ -1,4 +1,4 @@
-package tn.esprit.gouvernance_donnees_backend.implementation.services;
+package tn.esprit.gouvernance_donnees_backend.implementation.services.user;
 
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;

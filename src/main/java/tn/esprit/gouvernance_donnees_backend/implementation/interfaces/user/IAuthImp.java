@@ -1,4 +1,4 @@
-package tn.esprit.gouvernance_donnees_backend.implementation.interfaces;
+package tn.esprit.gouvernance_donnees_backend.implementation.interfaces.user;
 
 import tn.esprit.gouvernance_donnees_backend.entities.Utilisateur;
 import tn.esprit.gouvernance_donnees_backend.entities.requestEntities.LoginRequest;

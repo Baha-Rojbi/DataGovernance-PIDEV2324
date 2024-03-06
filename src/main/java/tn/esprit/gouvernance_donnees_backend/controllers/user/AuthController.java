@@ -1,4 +1,4 @@
-package tn.esprit.gouvernance_donnees_backend.controllers;
+package tn.esprit.gouvernance_donnees_backend.controllers.user;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import tn.esprit.gouvernance_donnees_backend.entities.Utilisateur;
 import tn.esprit.gouvernance_donnees_backend.entities.requestEntities.LoginRequest;
 import tn.esprit.gouvernance_donnees_backend.entities.responseEntities.AuthenticationResponse;
-import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.IAuthImp;
+import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.user.IAuthImp;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @AllArgsConstructor
