@@ -19,6 +19,8 @@ import tn.esprit.gouvernance_donnees_backend.repositories.UtilisateurRepository;
 public class UtilisateurServiceImp implements IUtilisateurImp {
     
     private UtilisateurRepository utilisateurRepository;
+  
+
     
     @Override
     public Utilisateur getUserInformationByLoggedEmail(String email) {

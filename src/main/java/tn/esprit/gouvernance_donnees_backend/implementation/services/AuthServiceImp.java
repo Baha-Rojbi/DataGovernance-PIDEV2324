@@ -1,5 +1,6 @@
 package tn.esprit.gouvernance_donnees_backend.implementation.services;
 
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -17,6 +18,7 @@ import tn.esprit.gouvernance_donnees_backend.entities.responseEntities.Authentic
 import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.IAuthImp;
 import tn.esprit.gouvernance_donnees_backend.repositories.AdresseRepository;
 import tn.esprit.gouvernance_donnees_backend.repositories.UtilisateurRepository;
+
 @Slf4j
 @AllArgsConstructor
 @Service
@@ -27,9 +29,10 @@ public class AuthServiceImp implements IAuthImp {
     private JwtService jwtService;
     private AuthenticationManager authenticationManager;
     private AdresseRepository adresseRepository;
+    private EmailService emailService;
 
     // register user
-  
+
     @Override
     public AuthenticationResponse registerUtilsateur(Utilisateur user) {
         if (utilisateurRepository.findByEmail(user.getEmail()) != null) {
@@ -39,9 +42,15 @@ public class AuthServiceImp implements IAuthImp {
         Adresse adresse = user.getAdresse();
         adresseRepository.save(adresse);
         user.setAdresse(adresse);
-        user.setStatus(UserStatus.PENDING);
+        user.setStatus(UserStatus.REJECTED);
         utilisateurRepository.save(user);
         var jwtToken = jwtService.generateToken(user);
+        
+        // Send email confirmation
+        sendEmailConfirmation(user.getEmail(), jwtToken);
+
+        // Log confirmation token
+        System.out.println("Confirmation Token: " + jwtToken);
         return AuthenticationResponse.builder()
                 .jwtToken(jwtToken)
                 .build();
@@ -51,10 +60,8 @@ public class AuthServiceImp implements IAuthImp {
     public AuthenticationResponse loginUtilisateur(LoginRequest loginRequest) {
         try {
             authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword())
-            );
-            
-           
+                    new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
+
         } catch (Exception e) {
             log.info("Authentication failed for user: {}", loginRequest.getEmail());
             throw new BadCredentialsException("Invalid email or password");
@@ -62,10 +69,32 @@ public class AuthServiceImp implements IAuthImp {
         }
         var user = utilisateurRepository.findByEmail(loginRequest.getEmail());
         var jwtToken = jwtService.generateToken(user);
-      
+
         return AuthenticationResponse.builder()
-            .jwtToken(jwtToken)
-            .build();
+                .jwtToken(jwtToken)
+                .build();
+    }
+
+    private void sendEmailConfirmation(String userEmail, String jwtToken) {
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        mailMessage.setTo(userEmail);
+        mailMessage.setSubject("Complete Registration!");
+        mailMessage.setText("To confirm your account, please click here : "
+                + "http://localhost:4200/ConfirmEmail?token=" + jwtToken);
+        emailService.sendEmail(mailMessage);
+    }
+
+    public void confirmAccount(String token) {
+        // Validate token and extract user details
+        String userEmail = jwtService.extractUserName(token);
+        // Check if user exists
+        Utilisateur existingUser = utilisateurRepository.findByEmail(userEmail);
+        if (existingUser == null) {
+            throw new IllegalArgumentException("User not found");
+        }
+        // Update user status to PENDING
+        existingUser.setStatus(UserStatus.PENDING);
+        utilisateurRepository.save(existingUser);
     }
 
 }

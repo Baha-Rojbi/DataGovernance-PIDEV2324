@@ -3,10 +3,8 @@ package tn.esprit.gouvernance_donnees_backend.repositories;
 import java.util.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import tn.esprit.gouvernance_donnees_backend.entities.UserStatus;
 import tn.esprit.gouvernance_donnees_backend.entities.Utilisateur;
 
 

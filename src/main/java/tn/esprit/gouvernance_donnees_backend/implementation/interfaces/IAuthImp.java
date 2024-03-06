@@ -10,6 +10,9 @@ public interface IAuthImp {
     public AuthenticationResponse registerUtilsateur(Utilisateur user);
     public AuthenticationResponse loginUtilisateur(LoginRequest loginRequest);
 
+    //email confirmation methods 
+    public void confirmAccount(String token);
+
    
 
     

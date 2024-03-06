@@ -19,6 +19,5 @@ import tn.esprit.gouvernance_donnees_backend.entities.UserStatus;
 public class afffectRoleStatusRequest  {
     private Long idUtilisateur;
     private Role role;
-
     private UserStatus status;
 } 
