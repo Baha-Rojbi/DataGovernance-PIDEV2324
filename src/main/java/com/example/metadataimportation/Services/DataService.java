@@ -69,4 +69,14 @@ public class DataService {
         schemaRepository.save(schema);
     }
 
+    public List<DataTable> getDataTables(String order) {
+        if ("mostRecent".equalsIgnoreCase(order)) {
+            return tableRepository.findAllByOrderByCreationDateDesc();
+        } else if ("leastRecent".equalsIgnoreCase(order)) {
+            return tableRepository.findAllByOrderByCreationDateAsc();
+        } else {
+            throw new IllegalArgumentException("Invalid order parameter");
+        }
+    }
+
 }

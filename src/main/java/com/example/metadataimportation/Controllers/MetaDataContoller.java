@@ -105,4 +105,8 @@ public class MetaDataContoller {
 
 
     }
+    @GetMapping("/tables/sort")
+    public List<DataTable> getDataTables(@RequestParam String order) {
+        return dataTableService.getDataTables(order);
+    }
 }
