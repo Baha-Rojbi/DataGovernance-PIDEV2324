@@ -23,7 +23,10 @@ public class Schema implements Serializable {
     private String name;
     private String type;
     private String description;
+    // Lineage information
 
+    private String sourceColumn; // Originating column name
+    private String sourceTable; // Originating table name
     @ElementCollection // This annotation is used to denote a collection of simple elements
     @CollectionTable(name = "schema_tags", joinColumns = @JoinColumn(name = "id_schema")) // This specifies the table that stores the collection
     @Column(name = "tag") // Name of the column that stores the tags

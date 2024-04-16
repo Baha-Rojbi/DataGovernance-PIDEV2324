@@ -124,6 +124,8 @@ public class FileProcessService implements IFileProcessService {
             columnInfo.setType(entry.getValue());
             columnInfo.setDescription("Column of " + entry.getKey());
             columnInfo.setParentDataTable(fileInfo);
+            columnInfo.setSourceColumn(entry.getKey()); // Set source column name
+            columnInfo.setSourceTable(fileInfo.getName()); // Set source table name (file name without extension)
             schemaRepository.save(columnInfo);
         }
     }
