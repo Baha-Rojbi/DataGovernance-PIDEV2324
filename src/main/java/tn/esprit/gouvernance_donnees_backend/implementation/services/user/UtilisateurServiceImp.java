@@ -105,8 +105,8 @@ public class UtilisateurServiceImp implements IUtilisateurImp {
             utilisateur.setSexe(user.getSexe());
             utilisateur.setNumTel(user.getNumTel());
             utilisateur.setDescription(user.getDescription());
-            utilisateur.setSociete(utilisateur.getSociete());
-
+            utilisateur.setSociete(user.getSociete());
+            
             this.adresseRepository.save(user.getAdresse());
             utilisateur.setAdresse(user.getAdresse());
         } catch (Exception ex) {
