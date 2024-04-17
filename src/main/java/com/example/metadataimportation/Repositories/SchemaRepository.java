@@ -12,7 +12,10 @@ public interface SchemaRepository extends JpaRepository<Schema,Long> {
     //Repository
     @Query(value = "SELECT t.tag AS tag, COUNT(t.tag) AS count FROM schema_tags t GROUP BY t.tag", nativeQuery = true)
     List<Object[]> countTags();
-    @Query("SELECT s.name, COUNT(s.name) FROM Schema s GROUP BY s.name")
-    List<Object[]> countByName();
+   // @Query("SELECT s.name, COUNT(s.name) FROM Schema s GROUP BY s.name")
+    //List<Object[]> countByName();
+
+    @Query("SELECT s.name, COUNT(s) FROM Schema s GROUP BY s.name")
+    List<Object[]> countByNameWithCount();
 
 }

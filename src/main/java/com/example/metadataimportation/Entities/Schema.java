@@ -23,6 +23,7 @@ public class Schema implements Serializable {
     private String type;
     private String description;
 
+
     @ElementCollection // This annotation is used to denote a collection of simple elements
     @CollectionTable(name = "schema_tags", joinColumns = @JoinColumn(name = "id_schema")) // This specifies the table that stores the collection
     @Column(name = "tag") // Name of the column that stores the tags
@@ -31,4 +32,54 @@ public class Schema implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_table")
     private DataTable parentDataTable;
+
+
+
+    public Long getIdSchema() {
+        return idSchema;
+    }
+
+    public void setIdSchema(Long idSchema) {
+        this.idSchema = idSchema;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Set<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(Set<String> tags) {
+        this.tags = tags;
+    }
+
+    public DataTable getParentDataTable() {
+        return parentDataTable;
+    }
+
+    public void setParentDataTable(DataTable parentDataTable) {
+        this.parentDataTable = parentDataTable;
+    }
 }

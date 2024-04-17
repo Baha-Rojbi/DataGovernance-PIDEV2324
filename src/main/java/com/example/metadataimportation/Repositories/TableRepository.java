@@ -7,11 +7,11 @@ import javax.xml.crypto.Data;
 import java.util.List;
 import java.util.Optional;
 
-public interface TableRepository extends JpaRepository<DataTable,Long> {
+public interface  TableRepository extends JpaRepository<DataTable,Long> {
     Optional<DataTable> findByName(String name);
 
-    List<DataTable> findAllByOrderByCreationDateAsc();
+    List<DataTable> findAllByOrderByCreationDateAsc();// Least recent first
 
 
-    List<DataTable> findAllByOrderByCreationDateDesc();
+    List<DataTable> findAllByOrderByCreationDateDesc();// Most recent first
 }

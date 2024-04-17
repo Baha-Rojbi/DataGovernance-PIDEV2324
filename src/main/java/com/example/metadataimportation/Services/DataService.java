@@ -7,8 +7,10 @@ import com.example.metadataimportation.Repositories.TableRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -69,6 +71,7 @@ public class DataService {
         schemaRepository.save(schema);
     }
 
+
     public List<DataTable> getDataTables(String order) {
         if ("mostRecent".equalsIgnoreCase(order)) {
             return tableRepository.findAllByOrderByCreationDateDesc();
@@ -78,5 +81,17 @@ public class DataService {
             throw new IllegalArgumentException("Invalid order parameter");
         }
     }
+/*   public List<DataTable> getDataTablesSortedByDate(String sortOrder) {
+        if ("asc".equalsIgnoreCase(sortOrder)) {
+            return tableRepository.findAllByOrderByCreationDateAsc();
+        } else {
+            return tableRepository.findAllByOrderByCreationDateDesc();
+        }
+    }*/
+
+
+   /* public List<DataTable>SortedData(){
+        tableRepository.findAll(Sort.Order.desc(LocalDateTime creationDate ))
+    }*/
 
 }
