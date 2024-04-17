@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dd566250-6405-46f2-8637-d0a0a570b95c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/implementation/interfaces/importation/IPdfService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/implementation/services/imortation/DataService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/implementation/services/imortation/PdfService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/repositories/importation/SchemaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/controllers/extraction/MetaDataContoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/controllers/importation/MetaDataContoller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/entities/DataTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/entities/importation/DataTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/entities/Schema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/entities/importation/Schema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/implementation/interfaces/exportation/IDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/implementation/interfaces/importation/IDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/implementation/interfaces/exportation/IFileProcessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/implementation/interfaces/importation/IFileProcessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/implementation/services/exportation/DataService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/implementation/services/exportation/FileProcessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/implementation/services/imortation/FileProcessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/repositories/SchemaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/repositories/TableRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/repositories/importation/TableRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/GrantedAuthorityDeserializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/GrantedAuthorityDeserializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/SwaggerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/SwaggerConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/aspectConfig/AuthAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/aspectConfig/AuthAspect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/authConfig/ApplicationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/authConfig/ApplicationConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/authConfig/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/authConfig/JwtAuthenticationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/authConfig/JwtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/authConfig/JwtService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/authConfig/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/authConfig/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/twilioConfig/TwilioConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/Configuration/twilioConfig/TwilioConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/GouvernanceDonneesBackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/GouvernanceDonneesBackendApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/controllers/extraction/MetaDataContoller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/controllers/user/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/controllers/user/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/controllers/user/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/controllers/user/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/controllers/user/userController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/controllers/user/userController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/DataTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/Schema.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/requestEntities/EmailConfirmationRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/requestEntities/EmailConfirmationRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/requestEntities/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/requestEntities/LoginRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/requestEntities/OTPDataRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/requestEntities/OTPDataRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/requestEntities/SmsRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/requestEntities/SmsRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/requestEntities/VerifyOldPsswordRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/requestEntities/VerifyOldPsswordRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/requestEntities/afffectRoleStatusRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/requestEntities/afffectRoleStatusRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/responseEntities/AuthenticationResponse$AuthenticationResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/responseEntities/AuthenticationResponse$AuthenticationResponseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/responseEntities/AuthenticationResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/responseEntities/AuthenticationResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/userEntities/Adresse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/userEntities/Adresse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/userEntities/Poste.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/userEntities/Poste.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/userEntities/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/userEntities/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/userEntities/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/userEntities/Team.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/userEntities/UserStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/userEntities/UserStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/userEntities/Utilisateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/entities/userEntities/Utilisateur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/interfaces/exportation/IDataService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/interfaces/exportation/IFileProcessService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/interfaces/user/IAuthImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/interfaces/user/IAuthImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/interfaces/user/IUtilisateurImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/interfaces/user/IUtilisateurImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/exportation/DataService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/exportation/FileProcessService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/user/AuthServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/user/AuthServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/user/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/user/EmailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/user/Sms/OtpManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/user/Sms/OtpManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/user/Sms/TwilioInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/user/Sms/TwilioInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/user/Sms/TwilioSmsSenderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/user/Sms/TwilioSmsSenderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/user/UtilisateurServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/implementation/services/user/UtilisateurServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/repositories/SchemaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/repositories/TableRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/repositories/userRepositories/AdresseRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/repositories/userRepositories/AdresseRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/repositories/userRepositories/TeamRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/repositories/userRepositories/TeamRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/repositories/userRepositories/UtilisateurRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/gouvernance_donnees_backend/repositories/userRepositories/UtilisateurRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/metadataimportation/MetaDataImportationApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/metadataimportation/MetaDataImportationApplicationTests.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2clJCIeQiCh6A8ZbgkZ1MSTiH8U" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "Mohamed-Taamallah",
+    "last_opened_file_path": "C:/Users/bahar/Desktop/Github/DataGovernance-PIDEV2324/src/main/java/tn/esprit/gouvernance_donnees_backend/repositories/importation",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "331730a2603f8e9d12ba544acff6035e",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bahar\Desktop\Github\DataGovernance-PIDEV2324\src\main\java\tn\esprit\gouvernance_donnees_backend\repositories\importation" />
+      <recent name="C:\Users\bahar\Desktop\Github\DataGovernance-PIDEV2324\src\main\java\tn\esprit\gouvernance_donnees_backend\implementation\services\imortation" />
+      <recent name="C:\Users\bahar\Desktop\Github\DataGovernance-PIDEV2324\src\main\java\tn\esprit\gouvernance_donnees_backend\implementation\interfaces\importation" />
+      <recent name="C:\Users\bahar\Desktop\Github\DataGovernance-PIDEV2324\src\main\java\tn\esprit\gouvernance_donnees_backend\implementation\interfaces\user\importation" />
+      <recent name="C:\Users\bahar\Desktop\Github\DataGovernance-PIDEV2324\src\main\java\tn\esprit\gouvernance_donnees_backend\repositories\userRepositories\importation" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="tn.esprit.gouvernance_donnees_backend.controllers.importation" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.GouvernanceDonneesBackendApplication">
+    <configuration name="GouvernanceDonneesBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="gouvernance_donnees_backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="tn.esprit.gouvernance_donnees_backend.GouvernanceDonneesBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MetaDataImportationApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="MetaDataImportation" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="tn.esprit.gouvernance_donnees_backend.MetaDataImportationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MetaDataImportationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="MetaDataImportation" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.metadataimportation.MetaDataImportationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MetaDataImportationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="MetaDataImportation" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.metadataimportation.MetaDataImportationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd566250-6405-46f2-8637-d0a0a570b95c" name="Changes" comment="" />
+      <created>1708680104867</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708680104867</updated>
+      <workItem from="1708680105663" duration="5527000" />
+      <workItem from="1708688055062" duration="4412000" />
+      <workItem from="1708776179231" duration="10804000" />
+      <workItem from="1708935217960" duration="676000" />
+      <workItem from="1709197770283" duration="713000" />
+      <workItem from="1709412748483" duration="643000" />
+      <workItem from="1709669639345" duration="68000" />
+      <workItem from="1709673411793" duration="3181000" />
+      <workItem from="1709730541706" duration="679000" />
+      <workItem from="1709741381294" duration="7041000" />
+      <workItem from="1709763119070" duration="71000" />
+      <workItem from="1709801560762" duration="28000" />
+      <workItem from="1713358600001" duration="68000" />
+      <workItem from="1713358694752" duration="740000" />
+      <workItem from="1713360399298" duration="30000" />
+      <workItem from="1713360452855" duration="66000" />
+      <workItem from="1713360578252" duration="937000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
