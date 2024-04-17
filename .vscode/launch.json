@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GouvernanceDonneesBackendApplication<gouvernance_donnees_backend>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "tn.esprit.gouvernance_donnees_backend.GouvernanceDonneesBackendApplication",
+            "projectName": "gouvernance_donnees_backend",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
