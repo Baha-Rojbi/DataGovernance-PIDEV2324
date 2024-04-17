@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd566250-6405-46f2-8637-d0a0a570b95c" name="Changes" comment="" />
+    <list default="true" id="dd566250-6405-46f2-8637-d0a0a570b95c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/entities/tracelog/TraceLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/gouvernance_donnees_backend/entities/tracelog/TraceLog.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,8 +52,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Mohamed-Taamallah",
-    "last_opened_file_path": "C:/Users/Asus/Downloads/DataGovernance-PIDEV2324-main/src/main/java/tn/esprit/gouvernance_donnees_backend/repositories/tracelog",
+    "git-widget-placeholder": "3-merged",
+    "last_opened_file_path": "C:/Users/Asus/Desktop/Nouveau dossier/DataGovernance-PIDEV2324",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -132,6 +135,7 @@
       <workItem from="1713360452855" duration="66000" />
       <workItem from="1713360578252" duration="937000" />
       <workItem from="1713369873363" duration="4998000" />
+      <workItem from="1713376285001" duration="66000" />
     </task>
     <servers />
   </component>

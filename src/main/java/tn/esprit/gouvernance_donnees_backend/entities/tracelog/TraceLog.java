@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 
 
 public class TraceLog {
+    //emna
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
