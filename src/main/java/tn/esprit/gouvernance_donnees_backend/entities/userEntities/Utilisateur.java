@@ -29,7 +29,8 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import lombok.*;
 import tn.esprit.gouvernance_donnees_backend.Configuration.GrantedAuthorityDeserializer;
-import tn.esprit.gouvernance_donnees_backend.entities.TraceLog;
+import tn.esprit.gouvernance_donnees_backend.entities.tracelog.TraceLog;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -79,8 +80,8 @@ public class Utilisateur implements  UserDetails {
     private Adresse adresse;
 
 
-    @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
-    private List<TraceLog> traceLogs;
+   @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
+   private List<TraceLog> traceLogs;
 
 
     @OneToOne

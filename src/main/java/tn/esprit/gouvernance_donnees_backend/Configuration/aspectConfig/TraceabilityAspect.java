@@ -3,15 +3,19 @@ package tn.esprit.gouvernance_donnees_backend.Configuration.aspectConfig;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import tn.esprit.gouvernance_donnees_backend.implementation.services.tracelog.TraceLogService;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -24,7 +28,7 @@ public class TraceabilityAspect {
     @Autowired
     private TraceLogService traceLogService;
 
-    @Around("execution(* tn.esprit.gouvernance_donnees_backend.controllers.extraction.MetaDataContoller.uploadFile(..)) && args(file, description, ..)")
+    @Around("execution(* tn.esprit.gouvernance_donnees_backend.controllers.importation.MetaDataContoller.uploadFile(..)) && args(file, description, ..)")
     public Object logMetadataExtraction(ProceedingJoinPoint joinPoint, MultipartFile file, String description) throws Throwable {
         // Retrieve the authenticated user
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -48,7 +52,7 @@ public class TraceabilityAspect {
     }
 
 
-    @AfterReturning(pointcut = "execution(* tn.esprit.gouvernance_donnees_backend.controllers.extraction.MetaDataContoller.uploadFile(..))", returning = "result")
+    @AfterReturning(pointcut = "execution(* tn.esprit.gouvernance_donnees_backend.controllers.importation.MetaDataContoller.uploadFile(..))", returning = "result")
     public void logMetadataExtractionCompleted(JoinPoint joinPoint, Object result) {
         String fileName = getFileName(joinPoint);
         String timestamp = LocalDateTime.now().format(dateTimeFormatter);
@@ -58,7 +62,7 @@ public class TraceabilityAspect {
         traceLogService.saveLog("Metadata extraction completed successfully", fileName, "Success",username);
     }
 
-    @AfterThrowing(pointcut = "execution(* tn.esprit.gouvernance_donnees_backend.controllers.extraction.MetaDataContoller.uploadFile(..))", throwing = "exception")
+    @AfterThrowing(pointcut = "execution(* tn.esprit.gouvernance_donnees_backend.controllers.importation.MetaDataContoller.uploadFile(..))", throwing = "exception")
     public void logMetadataExtractionError(JoinPoint joinPoint, Exception exception) {
         String fileName = getFileName(joinPoint);
         String timestamp = LocalDateTime.now().format(dateTimeFormatter);

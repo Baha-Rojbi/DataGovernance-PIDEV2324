@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import tn.esprit.gouvernance_donnees_backend.entities.importation.DataTable;
+
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -22,10 +24,14 @@ public class Schema implements Serializable {
     private String name;
     private String type;
     private String description;
-    @ElementCollection // This assumes tags are stored as a collection of simple elements
-    @CollectionTable(name = "schema_tags", joinColumns = @JoinColumn(name = "id_schema") )
-    @Column(name = "tag" )
-    private Set<String> tags = new HashSet<>();
+    // Lineage information
+
+    private String sourceColumn; // Originating column name
+    private String sourceTable; // Originating table name
+    @ElementCollection // This annotation is used to denote a collection of simple elements
+    @CollectionTable(name = "schema_tags", joinColumns = @JoinColumn(name = "id_schema")) // This specifies the table that stores the collection
+    @Column(name = "tag") // Name of the column that stores the tags
+    private Set<String> tags = new HashSet<>(); // Using a Set to avoid duplicate tags
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_table")
