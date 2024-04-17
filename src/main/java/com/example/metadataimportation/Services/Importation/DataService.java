@@ -1,9 +1,9 @@
-package com.example.metadataimportation.Services;
+package com.example.metadataimportation.Services.Importation;
 
-import com.example.metadataimportation.Entities.DataTable;
-import com.example.metadataimportation.Entities.Schema;
-import com.example.metadataimportation.Repositories.SchemaRepository;
-import com.example.metadataimportation.Repositories.TableRepository;
+import com.example.metadataimportation.Entities.Importation.DataTable;
+import com.example.metadataimportation.Entities.Importation.Schema;
+import com.example.metadataimportation.Repositories.Importation.SchemaRepository;
+import com.example.metadataimportation.Repositories.Importation.TableRepository;
 
 
 import jakarta.persistence.EntityNotFoundException;
@@ -19,7 +19,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Service
-public class DataService {
+public class DataService implements IDataService{
     @Autowired
     private final TableRepository tableRepository;
     @Autowired
@@ -28,14 +28,15 @@ public class DataService {
     public DataService(TableRepository tableRepository) {
         this.tableRepository = tableRepository;
     }
-
+@Override
     public List<DataTable> getAllDataTables() {
         return tableRepository.findAll();
     }
-
+    @Override
     public Optional<DataTable> getDataTableById(Long id) {
         return tableRepository.findById(id);
     }
+    @Override
 @Transactional
     public DataTable saveOrUpdateDataTable(DataTable dataTable) {
         if (dataTable.getIdTable() != null && tableRepository.existsById(dataTable.getIdTable())) {
@@ -47,7 +48,7 @@ public class DataService {
         }
     }
 
-
+    @Override
     public Optional<DataTable> findById(Long id) {
         return tableRepository.findById(id);
     }
@@ -62,6 +63,7 @@ public class DataService {
             return new ArrayList<>(dataTable.getSchemas());
         }
     }
+    @Override
     public Schema updateSchema(Long id, Schema schemaDetails) {
         Schema schema = schemaRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Schema not found for id: " + id));
@@ -73,12 +75,14 @@ public class DataService {
 
         return schemaRepository.save(schema);
     }
+    @Override
     public void updateTags(Long idSchema, Set<String> tags) {
         Schema schema = schemaRepository.findById(idSchema)
                 .orElseThrow(() -> new EntityNotFoundException("Schema not found"));
         schema.setTags(tags);
         schemaRepository.save(schema);
     }
+    @Override
     @Transactional
     public Schema createSchema(Long tableId, Schema schema) {
         DataTable dataTable = tableRepository.findById(tableId)
@@ -86,6 +90,7 @@ public class DataService {
         schema.setParentDataTable(dataTable);
         return schemaRepository.save(schema);
     }
+    @Override
 
     @Transactional
     public void deleteSchema(Long schemaId) {
@@ -93,6 +98,32 @@ public class DataService {
             throw new EntityNotFoundException("Schema not found with id: " + schemaId);
         }
         schemaRepository.deleteById(schemaId);
+    }
+    @Override
+    @Transactional
+    public DataTable toggleArchiveStatus(Long id) {
+        Optional<DataTable> optionalDataTable = tableRepository.findById(id);
+        if (optionalDataTable.isPresent()) {
+            DataTable dataTable = optionalDataTable.get();
+            dataTable.setArchived(!dataTable.isArchived());
+            return tableRepository.save(dataTable);
+        } else {
+            throw new EntityNotFoundException("DataTable not found with id: " + id);
+        }
+    }
+    @Override
+    @Transactional
+    public DataTable createDataTable(String name, String description) {
+        DataTable dataTable = new DataTable();
+        dataTable.setName(name);
+        dataTable.setDescription(description);
+        dataTable.setSource("table"); // As specified
+        dataTable.setFileType("none"); // As specified
+        dataTable.setCreationDate(LocalDateTime.now());
+        dataTable.setModificationDate(LocalDateTime.now());
+        dataTable.setSize(0.0);
+        dataTable.setCreator("System");
+        return tableRepository.save(dataTable);
     }
 
 

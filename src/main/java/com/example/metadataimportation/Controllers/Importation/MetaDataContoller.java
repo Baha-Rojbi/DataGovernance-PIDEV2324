@@ -1,10 +1,11 @@
-package com.example.metadataimportation.Controllers;
+package com.example.metadataimportation.Controllers.Importation;
 
-import com.example.metadataimportation.Entities.DataTable;
-import com.example.metadataimportation.Entities.Schema;
-import com.example.metadataimportation.Services.DataService;
-import com.example.metadataimportation.Services.FileProcessService;
-import com.example.metadataimportation.Services.PdfService;
+import com.example.metadataimportation.Entities.Importation.DataTable;
+import com.example.metadataimportation.Entities.Importation.Schema;
+import com.example.metadataimportation.Services.Importation.DataService;
+import com.example.metadataimportation.Services.Importation.IDataService;
+import com.example.metadataimportation.Services.Importation.IFileProcessService;
+import com.example.metadataimportation.Services.Importation.IPdfService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -22,11 +25,11 @@ import java.util.Set;
 @RequestMapping("/api")
 public class MetaDataContoller {
     @Autowired
-    private FileProcessService fileProcessService;
+    private IFileProcessService fileProcessService;
     @Autowired
-    private DataService dataTableService;
+    private IDataService dataTableService;
     @Autowired
-    private PdfService pdfService;
+    private IPdfService pdfService;
     @Autowired
     public MetaDataContoller(DataService dataTableService) {
         this.dataTableService = dataTableService;
@@ -115,5 +118,26 @@ public class MetaDataContoller {
         headers.setContentDispositionFormData("filename", "datatable-details.pdf");
         return new ResponseEntity<>(pdfContent, headers, HttpStatus.OK);
     }
+    @PutMapping("/tables/{id}/toggle-archive")
+    public ResponseEntity<?> toggleArchiveStatus(@PathVariable Long id) {
+        Optional<DataTable> optionalDataTable = dataTableService.findById(id);
+        if (optionalDataTable.isPresent()) {
+            DataTable dataTable = optionalDataTable.get();
+            dataTable.setArchived(!dataTable.isArchived());
+            dataTableService.saveOrUpdateDataTable(dataTable);
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @PostMapping("/tables/create")
+    public ResponseEntity<DataTable> createDataTable(@RequestBody Map<String, String> payload) {
+        String name = payload.get("name");
+        String description = payload.get("description");
+        DataTable dataTable = dataTableService.createDataTable(name, description);
+        return new ResponseEntity<>(dataTable, HttpStatus.CREATED);
+    }
+
+
 
 }

@@ -1,4 +1,4 @@
-package com.example.metadataimportation.Entities;
+package com.example.metadataimportation.Entities.Importation;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -28,8 +28,13 @@ public class DataTable implements Serializable {
     private LocalDateTime modificationDate;
     private Double size;
     private String creator;
+    private boolean archived = false;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "parentDataTable", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "parentDataTable", cascade = CascadeType.ALL)
     private Set<Schema> schemas;
+
+    public void setArchived(boolean archived) {
+        this.archived = archived;
+    }
 }
