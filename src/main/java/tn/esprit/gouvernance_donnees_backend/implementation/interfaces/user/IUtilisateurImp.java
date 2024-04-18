@@ -1,6 +1,7 @@
 package tn.esprit.gouvernance_donnees_backend.implementation.interfaces.user;
 
 import java.util.List;
+import java.util.Map;
 
 import tn.esprit.gouvernance_donnees_backend.entities.requestEntities.VerifyOldPsswordRequest;
 import tn.esprit.gouvernance_donnees_backend.entities.userEntities.Role;
@@ -24,4 +25,5 @@ public interface IUtilisateurImp {
     public List<Utilisateur> getAllApproveUsers(Long UserId,Long ownedTeamId);
     public List<Utilisateur> getOwnedTeamMemebers(Long ownedTeamId);
     public Team removeMemberFromTeam(Long memberId, Long teamId);
+    public Map<UserStatus, Long> countByStatus();
 } 

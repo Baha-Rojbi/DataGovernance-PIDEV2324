@@ -1,7 +1,7 @@
 package tn.esprit.gouvernance_donnees_backend.controllers.user;
 
 import java.util.List;
-
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import tn.esprit.gouvernance_donnees_backend.entities.requestEntities.afffectRoleStatusRequest;
 import tn.esprit.gouvernance_donnees_backend.entities.userEntities.Utilisateur;
 import tn.esprit.gouvernance_donnees_backend.implementation.interfaces.user.IUtilisateurImp;
+import tn.esprit.gouvernance_donnees_backend.entities.userEntities.UserStatus;
 
 
 
@@ -34,7 +35,10 @@ public class AdminController {
        return iUtilisateurImp.affectRoleAndChangeStatus(affectRoleAndChangeStatus.getIdUtilisateur(),affectRoleAndChangeStatus.getRole(),affectRoleAndChangeStatus.getStatus());
     }
 
-
+    @GetMapping("/getUserStatusCount")
+    public Map<UserStatus, Long> getUserStatusCount() {
+        return iUtilisateurImp.countByStatus();
+    }
     
     
 

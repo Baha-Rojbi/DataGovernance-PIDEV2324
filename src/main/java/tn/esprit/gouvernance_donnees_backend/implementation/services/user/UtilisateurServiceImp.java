@@ -1,7 +1,9 @@
 package tn.esprit.gouvernance_donnees_backend.implementation.services.user;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -201,5 +203,19 @@ public class UtilisateurServiceImp implements IUtilisateurImp {
         utilisateurRepository.save(user);
 
         return team; // You can return the team object if needed
+    }
+
+    @Override
+    public Map<UserStatus, Long> countByStatus() {
+        List<Object[]> resultList = this.utilisateurRepository.countByStatus();
+
+        Map<UserStatus, Long> countByStatus = new HashMap<>();
+        for (Object[] result : resultList) {
+            UserStatus status = (UserStatus) result[0];
+            Long count = (Long) result[1];
+            countByStatus.put(status, count);
+        }
+
+        return countByStatus;
     }
 }

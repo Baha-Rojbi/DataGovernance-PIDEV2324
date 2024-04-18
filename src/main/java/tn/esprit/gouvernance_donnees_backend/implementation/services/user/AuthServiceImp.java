@@ -14,6 +14,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import tn.esprit.gouvernance_donnees_backend.Configuration.authConfig.JwtService;
 import tn.esprit.gouvernance_donnees_backend.entities.requestEntities.LoginRequest;
+import tn.esprit.gouvernance_donnees_backend.entities.requestEntities.SmsRequest;
 import tn.esprit.gouvernance_donnees_backend.entities.responseEntities.AuthenticationResponse;
 import tn.esprit.gouvernance_donnees_backend.entities.userEntities.Adresse;
 import tn.esprit.gouvernance_donnees_backend.entities.userEntities.UserStatus;
@@ -57,7 +58,7 @@ public class AuthServiceImp implements IAuthImp {
         var jwtToken = jwtService.generateToken(user);
         
         // Send email confirmation
-        //sendEmailConfirmation(user.getEmail(), jwtToken);
+        sendEmailConfirmation(user.getEmail(), jwtToken);
 
         // Log confirmation token
         System.out.println("Confirmation Token: " + jwtToken);
@@ -161,7 +162,7 @@ public class AuthServiceImp implements IAuthImp {
             otpManager.setOtpExpirationDurationMillis(2);
             String otp = otpManager.generateOTP(6);
             otpManager.storeOTP(phoneNumber, otp);
-            //this.twilioSmsSenderService.sendSms(new SmsRequest(phoneNumber,otp));
+            this.twilioSmsSenderService.sendSms(new SmsRequest(phoneNumber,otp));
             return otpManager.getOtpExpirationDurationMillis(); // SMS sent successfully
         } else {
             return -1; // Phone number not found in repository, SMS not sent

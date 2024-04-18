@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import tn.esprit.gouvernance_donnees_backend.entities.userEntities.UserStatus;
 import tn.esprit.gouvernance_donnees_backend.entities.userEntities.Utilisateur;
 
 
@@ -28,5 +29,8 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> 
    
    @Query("SELECT u FROM Utilisateur u JOIN Team t ON t.members = u WHERE t.id = ?1")
    public List<Utilisateur> getOwnedTeamMemebers(Long ownedTeamId);
+
+   @Query("SELECT u.status, COUNT(u) FROM Utilisateur u GROUP BY u.status")
+   List<Object[]> countByStatus();
     
 }
