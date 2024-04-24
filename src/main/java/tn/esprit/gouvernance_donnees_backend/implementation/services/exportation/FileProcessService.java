@@ -114,7 +114,7 @@ public class FileProcessService implements IFileProcessService {
         fileInfo.setCreationDate(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES)); // Truncate seconds
         fileInfo.setSize((double) fileSize / 1024); // Set size in KB
         fileInfo.setDescription(description);
-        fileInfo.setCreator("System");
+        fileInfo.setCreator("Mohamed Taamallah");
 
         fileInfo = tableRepository.save(fileInfo);
 
